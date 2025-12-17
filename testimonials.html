@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Stories - Vestige Distributor Testimonials</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #57cc99;
+            --accent-color: #ff9a3c;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            padding: 8px 0;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active {
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-dark);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        /* Testimonials Hero */
+        .testimonials-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2a7a9a 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .testimonials-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .testimonials-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Testimonials Grid */
+        .testimonials-section {
+            padding: 80px 20px;
+        }
+        
+        .testimonials-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            background: var(--white);
+            border: 2px solid var(--primary-color);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .client-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 3px solid var(--bg-light);
+        }
+        
+        .client-info h3 {
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .client-role {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+            line-height: 1.8;
+        }
+        
+        .testimonial-rating {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-category {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-light);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+        
+        .health-improvement {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .income-success {
+            background-color: #fff3e0;
+            color: #ef6c00;
+        }
+        
+        .product-review {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+
+        /* Video Testimonials */
+        .video-testimonials {
+            padding: 80px 20px;
+            background: var(--bg-light);
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .video-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .video-placeholder {
+            height: 200px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+        
+        .video-info {
+            padding: 20px;
+        }
+        
+        .play-btn {
+            background: rgba(255, 255, 255, 0.2);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+        
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Submit Testimonial */
+        .submit-testimonial {
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .testimonial-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .rating-input {
+            display: flex;
+            gap: 10px;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+        
+        .rating-input input {
+            display: none;
+        }
+        
+        .rating-input label {
+            font-size: 2rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .rating-input input:checked ~ label,
+        .rating-input label:hover,
+        .rating-input label:hover ~ label {
+            color: var(--accent-color);
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #144d63;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 60px 20px 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .footer-col p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            margin-top: 10px;
+            opacity: 0.6;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .testimonials-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+                gap: 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .testimonials-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .testimonials-filter {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .testimonial-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="assets/images/icons/vestige-logo.png" alt="Vestige Logo">
+                    <span>Vestige Distributor</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="products.html"><i class="fas fa-shopping-bag"></i> Products</a></li>
+                    <li><a href="opportunity.html"><i class="fas fa-chart-line"></i> Business Plan</a></li>
+                    <li><a href="about.html"><i class="fas fa-user"></i> About Me</a></li>
+                    <li><a href="testimonials.html" class="active"><i class="fas fa-star"></i> Testimonials</a></li>
+                    <li><a href="contact.html"><i class="fas fa-phone-alt"></i> Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="testimonials-hero">
+        <div class="container">
+            <h1>Success Stories & Testimonials</h1>
+            <p>Real experiences from real people who transformed their health and income with Vestige</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Grid -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-filter">
+                <button class="filter-btn active" onclick="filterTestimonials('all')">All Testimonials</button>
+                <button class="filter-btn" onclick="filterTestimonials('health')">Health Improvements</button>
+                <button class="filter-btn" onclick="filterTestimonials('income')">Income Success</button>
+                <button class="filter-btn" onclick="filterTestimonials('products')">Product Reviews</button>
+            </div>
+            
+            <div class="testimonials-grid" id="testimonialsGrid">
+                <!-- Testimonials will be loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Testimonials -->
+    <section class="video-testimonials">
+        <div class="container">
+            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">Video Testimonials</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Watch inspiring stories from our happy customers and successful distributors</p>
+            
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <div class="play-btn" onclick="playVideo('testimonial1')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Weight Loss Journey</h3>
+                        <p>Rita lost 12kg with Vestige products</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <div class="play-btn" onclick="playVideo('testimonial2')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Business Success</h3>
+                        <p>From ₹15,000 to ₹1,50,000 monthly income</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <div class="play-btn" onclick="playVideo('testimonial3')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Family Health</h3>
+                        <p>Complete family wellness transformation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Submit Testimonial -->
+    <section class="submit-testimonial">
+        <div class="container">
+            <h2 style="color: var(--primary-color); margin-bottom: 20px;">Share Your Success Story</h2>
+            <p style="max-width: 600px; margin: 0 auto 40px;">Have a success story with Vestige products or business? Share it with others and inspire them!</p>
+            
+            <div class="testimonial-form">
+                <form id="testimonialForm" onsubmit="submitTestimonial(event)">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="role">Your Role</label>
+                        <select id="role">
+                            <option value="customer">Customer</option>
+                            <option value="distributor">Distributor</option>
+                            <option value="team-leader">Team Leader</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category">
+                            <option value="health">Health Improvement</option>
+                            <option value="income">Income Success</option>
+                            <option value="products">Product Review</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Your Rating</label>
+                        <div class="rating-input">
+                            <input type="radio" id="star5" name="rating" value="5">
+                            <label for="star5">★</label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4">★</label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3">★</label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2">★</label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1">★</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="testimonial">Your Testimonial *</label>
+                        <textarea id="testimonial" required placeholder="Share your experience with Vestige products or business..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="beforeAfter">Before & After (Optional)</label>
+                        <input type="text" id="beforeAfter" placeholder="e.g., Lost 8kg, Income increased from ₹20k to ₹80k">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Submit Testimonial
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Vestige Distributor</h3>
+                    <p>Authorized distributor providing genuine Vestige products with guaranteed quality and best prices.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="opportunity.html">Business Plan</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> yourname@vestige.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Your City, India</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Vestige Distributor. All rights reserved.</p>
+                <p class="disclaimer">Vestige Marketing Pvt. Ltd. is a registered direct selling company. Earnings depend on individual efforts.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Testimonials Data
+        const allTestimonials = [
+            {
+                id: 1,
+                name: 'Rajesh Sharma',
+                role: 'Businessman',
+                category: 'health',
+                rating: 5,
+                content: 'Vestige Aloe Vera gel completely transformed my digestive health. After 3 months of regular use, my acidity issues are gone and I lost 8kg weight naturally.',
+                beforeAfter: 'Lost 8kg, No more acidity',
+                date: 'March 15, 2024'
+            },
+            {
+                id: 2,
+                name: 'Priya Patel',
+                role: 'Housewife & Distributor',
+                category: 'income',
+                rating: 5,
+                content: 'Started Vestige business 2 years ago as a part-time venture. Today I earn ₹75,000 monthly without leaving home. The training and support system is excellent!',
+                beforeAfter: 'Income: ₹0 to ₹75,000/month',
+                date: 'February 28, 2024'
+            },
+            {
+                id: 3,
+                name: 'Dr. Amit Verma',
+                role: 'Doctor',
+                category: 'products',
+                rating: 4,
+                content: 'As a doctor, I recommend Vestige protein powder to my patients. The quality is excellent and it helps in muscle recovery and overall health.',
+                beforeAfter: 'Recommended to 50+ patients',
+                date: 'January 10, 2024'
+            },
+            {
+                id: 4,
+                name: 'Sunita Rani',
+                role: 'Teacher',
+                category: 'health',
+                rating: 5,
+                content: 'Vestige detox tea helped me reduce 5 inches from my waist in 2 months. My skin is glowing and I have more energy throughout the day.',
+                beforeAfter: 'Waist: -5 inches, More energy',
+                date: 'December 5, 2023'
+            },
+            {
+                id: 5,
+                name: 'Ravi Kumar',
+                role: 'Engineer & Team Leader',
+                category: 'income',
+                rating: 5,
+                content: 'From a ₹30,000 job to ₹2,00,000 monthly income with Vestige. Built a team of 100+ distributors. The compensation plan is truly rewarding.',
+                beforeAfter: 'Income: ₹30k to ₹2L/month',
+                date: 'November 20, 2023'
+            },
+            {
+                id: 6,
+                name: 'Anjali Gupta',
+                role: 'Student',
+                category: 'products',
+                rating: 4,
+                content: 'Vestige Vitamin C tablets boosted my immunity during exams. Didn\'t fall sick even once during the entire semester. Highly recommended for students!',
+                beforeAfter: 'Zero sick days in 6 months',
+                date: 'October 15, 2023'
+            }
+        ];
+
+        // Load Testimonials
+        function loadTestimonials() {
+            displayTestimonials(allTestimonials);
+        }
+
+        function displayTestimonials(testimonials) {
+            const testimonialsGrid = document.getElementById('testimonialsGrid');
+            testimonialsGrid.innerHTML = '';
+            
+            testimonials.forEach(testimonial => {
+                const testimonialCard = document.createElement('div');
+                testimonialCard.className = 'testimonial-card';
+                
+                // Category class for styling
+                let categoryClass = '';
+                if (testimonial.category === 'health') categoryClass = 'health-improvement';
+                if (testimonial.category === 'income') categoryClass = 'income-success';
+                if (testimonial.category === 'products') categoryClass = 'product-review';
+                
+                // Category text
+                let categoryText = '';
+                if (testimonial.category === 'health') categoryText = 'Health Improvement';
+                if (testimonial.category === 'income') categoryText = 'Income Success';
+                if (testimonial.category === 'products') categoryText = 'Product Review';
+                
+                // Generate star rating
+                let stars = '';
+                for (let i = 0; i < 5; i++) {
+                    stars += i < testimonial.rating ? '★' : '☆';
+                }
+                
+                testimonialCard.innerHTML = `
+                    <div class="testimonial-category ${categoryClass}">${categoryText}</div>
+                    <div class="testimonial-header">
+                        <img src="https://i.pravatar.cc/150?img=${testimonial.id}" 
+                             alt="${testimonial.name}" 
+                             class="client-image">
+                        <div class="client-info">
+                            <h3>${testimonial.name}</h3>
+                            <div class="client-role">${testimonial.role}</div>
+                            <div class="testimonial-rating">${stars}</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        "${testimonial.content}"
+                    </div>
+                    <div style="color: var(--text-light); font-size: 0.9rem;">
+                        <strong>Result:</strong> ${testimonial.beforeAfter}
+                    </div>
+                    <div style="color: var(--text-light); font-size: 0.8rem; margin-top: 10px;">
+                        ${testimonial.date}
+                    </div>
+                `;
+                testimonialsGrid.appendChild(testimonialCard);
+            });
+        }
+        
+        function filterTestimonials(category) {
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            if (category === 'all') {
+                displayTestimonials(allTestimonials);
+            } else {
+                const filtered = allTestimonials.filter(testimonial => 
+                    testimonial.category === category
+                );
+                displayTestimonials(filtered);
+            }
+        }
+        
+        function playVideo(videoId) {
+            alert(`In a real application, this would play video: ${videoId}\nFor now, you can watch testimonials on our YouTube channel.`);
+        }
+        
+        function submitTestimonial(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const role = document.getElementById('role').value;
+            const category = document.getElementById('category').value;
+            const rating = document.querySelector('input[name="rating"]:checked')?.value || 5;
+            const testimonial = document.getElementById('testimonial').value;
+            const beforeAfter = document.getElementById('beforeAfter').value;
+            
+            // In a real application, you would send this data to a server
+            // For now, we'll show a success message
+            alert(`Thank you ${name}!\nYour testimonial has been submitted for review.\nWe'll contact you soon if we need more details.`);
+            
+            // Reset form
+            document.getElementById('testimonialForm').reset();
+            
+            return false;
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            loadTestimonials();
+            
+            // Add current year to footer
+            const yearSpan = document.getElementById('currentYear');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+</body>
+</html>

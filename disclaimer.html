@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer - Vestige Distributor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #57cc99;
+            --accent-color: #ff9a3c;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            padding: 8px 0;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active {
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-dark);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        /* Disclaimer Hero */
+        .disclaimer-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2a7a9a 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .disclaimer-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .disclaimer-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Disclaimer Content */
+        .disclaimer-section {
+            padding: 80px 20px;
+        }
+        
+        .disclaimer-content {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        
+        @media (max-width: 768px) {
+            .disclaimer-content {
+                padding: 30px 20px;
+            }
+        }
+        
+        .disclaimer-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--bg-light);
+        }
+        
+        .disclaimer-section h3 {
+            color: var(--primary-color);
+            margin: 30px 0 15px;
+        }
+        
+        .disclaimer-section p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .disclaimer-section ul {
+            margin: 15px 0 15px 30px;
+        }
+        
+        .disclaimer-section li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .important-note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .legal-warning {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .contact-info-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #144d63;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 60px 20px 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .footer-col p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            margin-top: 10px;
+            opacity: 0.6;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+                gap: 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .disclaimer-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="assets/images/icons/vestige-logo.png" alt="Vestige Logo">
+                    <span>Vestige Distributor</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="products.html"><i class="fas fa-shopping-bag"></i> Products</a></li>
+                    <li><a href="opportunity.html"><i class="fas fa-chart-line"></i> Business Plan</a></li>
+                    <li><a href="about.html"><i class="fas fa-user"></i> About Me</a></li>
+                    <li><a href="testimonials.html"><i class="fas fa-star"></i> Testimonials</a></li>
+                    <li><a href="contact.html"><i class="fas fa-phone-alt"></i> Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="disclaimer-hero">
+        <div class="container">
+            <h1>Legal Disclaimer</h1>
+            <p>Important information about product claims, income disclosures, and legal terms</p>
+        </div>
+    </section>
+
+    <!-- Disclaimer Content -->
+    <section class="disclaimer-section">
+        <div class="container">
+            <div class="disclaimer-content">
+                <h2>Website Disclaimer</h2>
+                <p>This website is operated by an independent Vestige distributor. Please read the following disclaimer carefully before using this website or purchasing any products.</p>
+                
+                <div class="important-note">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Important Notice</h3>
+                    <p>This is an independent distributor website and not the official website of Vestige Marketing Pvt. Ltd. All product and company names are trademarks™ or registered® trademarks of their respective holders.</p>
+                </div>
+                
+                <h3>1. Product Disclaimer</h3>
+                <p>The products mentioned on this website are manufactured by Vestige Marketing Pvt. Ltd. The distributor is not responsible for any manufacturing defects or quality issues. All products should be used as directed and are not intended to diagnose, treat, cure, or prevent any disease.</p>
+                
+                <ul>
+                    <li>These products are not medicines and should not be used as a substitute for medical treatment</li>
+                    <li>Always consult your healthcare professional before starting any new health product</li>
+                    <li>Results may vary from person to person based on individual body type and health condition</li>
+                    <li>Keep products out of reach of children</li>
+                    <li>Store products as per instructions on the packaging</li>
+                </ul>
+                
+                <div class="legal-warning">
+                    <h4><i class="fas fa-balance-scale"></i> Legal Warning</h4>
+                    <p>Statements on this website have not been evaluated by the Food and Drug Administration (FDA) or any other regulatory authority. Products are not intended to diagnose, treat, cure, or prevent any disease.</p>
+                </div>
+                
+                <h3>2. Business Opportunity Disclaimer</h3>
+                <p>The Vestige business opportunity involves direct selling of products. Success in this business requires substantial effort, commitment, and skills.</p>
+                
+                <ul>
+                    <li>Earnings shown are examples and not guarantees of income</li>
+                    <li>Individual results will vary based on effort, skills, and market conditions</li>
+                    <li>There is no guarantee that you will earn any money</li>
+                    <li>Business results shown are from successful distributors and may not be typical</li>
+                    <li>All business participants must comply with Vestige's policies and procedures</li>
+                </ul>
+                
+                <h3>3. Income Disclosure Statement</h3>
+                <p>According to Vestige Marketing Pvt. Ltd.'s Income Disclosure Statement:</p>
+                
+                <ul>
+                    <li>Average monthly income for all active distributors: ₹3,000 - ₹5,000</li>
+                    <li>Top 10% of distributors earn: ₹25,000 - ₹50,000 per month</li>
+                    <li>Top 1% of distributors earn: ₹1,00,000+ per month</li>
+                    <li>Success requires consistent effort over 12-24 months</li>
+                    <li>Initial months may involve minimal or no income</li>
+                </ul>
+                
+                <div class="important-note">
+                    <h4><i class="fas fa-chart-line"></i> Financial Responsibility</h4>
+                    <p>You are responsible for your own business expenses, taxes, and compliance with local business laws. Vestige does not provide salary, benefits, or employment guarantees.</p>
+                </div>
+                
+                <h3>4. Testimonials Disclaimer</h3>
+                <p>Testimonials on this website are individual experiences and results. They are not typical and should not be interpreted as promises or guarantees of similar results.</p>
+                
+                <ul>
+                    <li>Testimonials are voluntarily provided by customers</li>
+                    <li>Results may vary based on individual circumstances</li>
+                    <li>Testimonials are not scientifically proven claims</li>
+                    <li>We do not claim that similar results will be achieved by others</li>
+                </ul>
+                
+                <h3>5. External Links Disclaimer</h3>
+                <p>This website may contain links to external websites that are not provided or maintained by this distributor. We do not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites.</p>
+                
+                <h3>6. Limitation of Liability</h3>
+                <p>By using this website, you agree that the distributor shall not be liable for:</p>
+                
+                <ul>
+                    <li>Any direct, indirect, incidental, or consequential damages</li>
+                    <li>Any errors or omissions in the content</li>
+                    <li>Any decisions made based on information provided on this website</li>
+                    <li>Any third-party websites linked from this site</li>
+                    <li>Any product performance issues or health concerns</li>
+                </ul>
+                
+                <div class="contact-info-box">
+                    <h4><i class="fas fa-info-circle"></i> Official Vestige Information</h4>
+                    <p>For official information about Vestige Marketing Pvt. Ltd., please visit:</p>
+                    <ul>
+                        <li>Official Website: <a href="https://www.vestige.in" target="_blank">www.vestige.in</a></li>
+                        <li>Customer Care: 1800 103 4433</li>
+                        <li>Registered Office: Plot No. 249, Udyog Vihar, Phase IV, Gurugram, Haryana 122015</li>
+                    </ul>
+                </div>
+                
+                <h3>7. Agreement</h3>
+                <p>By using this website, you acknowledge that you have read, understood, and agree to be bound by this disclaimer. If you do not agree with any part of this disclaimer, please do not use this website.</p>
+                
+                <p style="margin-top: 30px; font-weight: 500;">
+                    Last Updated: <span id="currentDate"></span>
+                </p>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="index.html" class="btn btn-primary">
+                        <i class="fas fa-home"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Vestige Distributor</h3>
+                    <p>Authorized distributor providing genuine Vestige products with guaranteed quality and best prices.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="opportunity.html">Business Plan</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> yourname@vestige.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Your City, India</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Vestige Distributor. All rights reserved.</p>
+                <p class="disclaimer">Vestige Marketing Pvt. Ltd. is a registered direct selling company. Earnings depend on individual efforts.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add current year to footer
+            const yearSpan = document.getElementById('currentYear');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+            
+            // Add current date to disclaimer
+            const dateSpan = document.getElementById('currentDate');
+            if (dateSpan) {
+                const now = new Date();
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                dateSpan.textContent = now.toLocaleDateString('en-US', options);
+            }
+        });
+    </script>
+</body>
+</html>
